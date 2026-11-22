@@ -36,7 +36,7 @@ If you upload a CSV it needs these columns: Name, Ingredients, Frequency, Time, 
 - Stock is the number of pills left
 - Don't open and save the CSV in Excel before uploading, it can add blank rows
 
-
+video link here : https://youtu.be/bX9QR7Qblu4
 ## Refill warning
 
 In `digital_app.py` there is a line `LOW = 5`. Any med with 5 pills or less shows up as running low. Change the number if you want.
