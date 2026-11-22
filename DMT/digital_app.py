@@ -1,7 +1,6 @@
 import importlib
 import streamlit as st
 import myutils
-from st_keyup import st_keyup  # text box that updates on every key press, taken from open discussion from discuss dot streamlit dot io (out of the original library)
 
 st.set_page_config(page_title="Digital Medication Tracker", page_icon="🧪") #sets the browser tab's title and icon.
 
@@ -97,8 +96,7 @@ if page_chosen == "Add Medication":
 if page_chosen == "Interaction Check":
     st.title("🧪 Interaction Check")
 
-    ingredient = st_keyup("Type an active ingredient").strip().lower()  # so "P"aracetamol or if its all CAps still matches and as defined and explained above the st keyup is extra and it helps live updates on the searching
-
+ingredient = st.text_input("Type an active ingredient").strip().lower()  # so "P"aracetamol or if its all CAps still matches
     if ingredient:
         shared_meds = myutils.find_shared_ingredient(meds, ingredient)
         if len(shared_meds) > 1:
@@ -127,7 +125,7 @@ if page_chosen == "Inventory":
         st.info("No medications yet. Add one first! 💊") 
     else:
         picked_categories = st.multiselect("Filter by category", CATEGORIES, default=CATEGORIES) #multi is a dropdown where you can pick several options
-        search_text = st_keyup("🔍 Search by name or ingredient") #search bar 
+        search_text = st.text_input("🔍 Search by name or ingredient") #search bar 
         filtered_meds = myutils.search_meds(myutils.filter_by_category(meds, picked_categories), search_text)
 
         found = len(filtered_meds)  # how many rows match the search and filter
