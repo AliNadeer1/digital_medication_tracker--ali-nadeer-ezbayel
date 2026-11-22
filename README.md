@@ -35,7 +35,7 @@ If you upload a CSV it needs these columns: Name, Ingredients, Frequency, Time, 
 - Write times like 08:00, not 8:00, or the schedule won't sort right
 - Stock is the number of pills left
 - Don't open and save the CSV in Excel before uploading, it can add blank rows
-
+  APP Link: https://digitalmedicationtracker--ali-nadeer-ezbayel.streamlit.app/
 video link here : https://youtu.be/bX9QR7Qblu4
 ## Refill warning
 
